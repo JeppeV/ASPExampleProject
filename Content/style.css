@@ -1,0 +1,247 @@
+﻿:root {
+	--header-height: 70px;
+	--footer-height: 40px;
+	--menu-width: 150px;
+	--mobile-menu-height:70px;
+	--menu-color: #333;
+	--footer-header-color: black;
+	
+}
+
+#body_container {
+	position: relative;
+	margin: 0 auto;
+	width: 1200px;
+	min-height: 500px;
+    
+    background-color: blue;
+    border: 2px solid black;
+}
+
+#header {
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: var(--header-height);
+	text-align: center;
+	
+	background-color: var(--footer-header-color);
+}
+
+#header h1 {
+	color: white;
+}
+
+#menu {
+	position: absolute;
+	left: 0%;
+	top: var(--header-height);
+	width: var(--menu-width);
+	height: calc(100% - var(--header-height) - var(--footer-height));
+    z-index: 1;
+	background-color: var(--menu-color);
+	border-right: 2px solid black;
+}
+
+#menu #navbar {
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+    
+	list-style-type: none;
+	background-color: inherit;
+    padding: 0;
+	
+}
+
+#menu #navbar li {
+	transition: 0.3s;
+}
+
+#menu #navbar li:hover {
+	background-color: #555;
+}
+
+#menu #navbar li a {
+	width: 80%;
+	
+	padding:10%;
+	display: inline-block;
+    
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 17px;
+
+    
+}
+
+#body {
+	position: absolute;
+	left: var(--menu-width);
+	top: var(--header-height);
+	width: calc(100% - var(--menu-width));
+	height: calc(100% - var(--header-height) - var(--footer-height));
+    overflow-y: scroll;
+    overflow-x: hidden;
+	
+}
+
+#footer {
+	position: absolute;
+	left: 0%;
+	top: calc(100% - var(--footer-height));
+	width: 100%;
+	height: var(--footer-height);
+	
+	color: white;
+	text-align: center;
+	
+	background-color: var(--footer-header-color);
+}
+
+/* /Home/Week */
+.weekday_entry {
+    background: teal;
+    text-align: center;
+}
+
+/* Home/Day */
+
+#day_left_menu {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    width: 20%;
+    height: 200px;
+    background: #3366ff;
+    
+    box-shadow: 10px 10px 5px #000000;
+}
+
+#day_name {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 20%;
+    font-size: 22px;
+    vertical-align: middle;
+    margin: 10px;
+}
+
+#day_add_new_participant_form {
+    position: absolute;
+    left: 0%;
+    top: 25%;
+    width: 100%;
+    height: 70%;
+    margin: 10px;
+
+    
+}
+
+#day_add_new_participant_input {
+    border: 1px solid black;
+    margin-bottom: 5px;
+}
+
+#day_add_new_participant_submit_button {
+    
+}
+
+#day_participant_entries {
+    position: absolute;
+    left: 30%;
+    top:5%;
+    width: 65%;
+    
+    background: #99b3ff;
+    box-shadow: 10px 10px 5px #000000;
+
+}
+
+.day_participant_entry {
+    position:relative;
+    height: 50px;
+    
+}
+
+.day_participant_entry_name {
+    vertical-align: middle;
+    border: 1px solid black;
+    color: white;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    font-size: 24px;
+    text-align: center;
+    width: 80%;
+    height: 100%;
+
+}
+
+.day_participant_entry_delete {
+    border: 1px solid black;
+    position: absolute;
+    left: 80%;
+    top: 0%;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    background: #99b3ff;
+    transition: 0.3s;
+    
+}
+
+.day_participant_entry_delete:hover {
+    background: #ff0000;
+}
+
+.day_participant_entry_delete_img {
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 480px) {
+    /* For mobile phones: */
+    #body_container {
+		width: 420px;
+	}
+
+	#menu {
+		text-align: center;
+		top: var(--header-height);
+		width: 100%;
+		height: var(--mobile-menu-height);
+	}
+
+	#menu #navbar li a {
+		padding: 2px;
+	    font-size: 15px;
+	}
+
+	#body {
+		left: 0%;
+		top: calc(var(--header-height) + var(--mobile-menu-height)) ;
+		width: 100%;
+		height: calc(100% - var(--header-height) - var(--footer-height) - var(--mobile-menu-height));
+	}
+
+	#img_view img {
+	
+		left: 10%;
+		top:25%;
+		width: 80%;
+		height: 50%;
+	
+	}
+
+}

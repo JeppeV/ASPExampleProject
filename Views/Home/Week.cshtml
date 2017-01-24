@@ -1,0 +1,22 @@
+﻿@model GUIExamASP.Models.Week
+
+@{ 
+    Layout = "~/Views/_Layout.cshtml";
+
+}
+
+<div id="weekday_entries">
+    
+    @for (var i = 0; i < Model.WeekDays.Count(); i++)
+    {
+        <div class="weekday_entry">
+            <a class="weekday_entry_link" href="/Home/Day/?weekNumber=@Model.WeekId&dayIndex=@i">@Model.WeekDays[i].DayName</a>
+            <hr />
+        </div>
+
+    }
+
+
+
+</div>
+

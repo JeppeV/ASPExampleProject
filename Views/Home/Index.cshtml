@@ -1,0 +1,29 @@
+﻿@model List<GUIExamASP.Models.Participant>
+@{
+    Layout = "~/Views/_Layout.cshtml";
+}
+<div id="participants_list">
+
+    @foreach (var participant in Model)
+    {
+        <div class="participant_entry">
+
+            <div class="participant_entry_name">@participant.Name</div>
+            <hr />
+        </div>
+
+    }
+
+</div>
+
+<div id="add_new_participant_form">
+    <form>
+        <input type="text" id="add_new_participant_input" name="name" pattern=".{2,12}" required /> <br />
+        <input type="submit" value="Tilmeld Nyt Medlem" id="add_new_participant_submit_button" />
+    </form>
+
+</div>
+<script src="~/Scripts/index_script.js"></script>
+    
+
+

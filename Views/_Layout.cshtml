@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/style.css" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <title>FrokostKlubben</title>
+</head>
+<body>
+    <div id="body_container">
+
+        <div id="header">
+            <h1> @ViewBag.Title </h1>
+        </div>
+
+
+        <div id="menu">
+            <ul id="navbar">
+                <li> <a href="/Home/Index">Hjem</a> </li>
+                <li> <a href="/Home/WeekSelection">Gennemse Uger</a> </li>
+            </ul>
+        </div>
+        <div id="body">
+            @RenderBody()
+        </div>
+
+        <div id="footer">
+            
+        </div>
+
+
+    </div>
+    </body>
+</html>

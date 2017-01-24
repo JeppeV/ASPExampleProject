@@ -1,0 +1,33 @@
+﻿@model GUIExamASP.Models.Day
+
+@{
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<div id="day_left_menu">
+    
+    <div id="day_name">
+        @Model.DayName 
+    </div>
+    
+    <div id="day_add_new_participant_form">
+        <form>
+            <input type="text" id="day_add_new_participant_input" name="name" pattern=".{2,12}" required /> <br />
+            <input type="submit" value="Tilmeld Medlem Til Frokost" id="day_add_new_participant_submit_button" />
+        </form>
+
+    </div>
+</div>
+<div id="day_participant_entries">
+
+    @for (var i = 0; i < Model.Participants.Count(); i++)
+    {
+        <div class="day_participant_entry">
+            <div class="day_participant_entry_name">@Model.Participants[i].Name</div>
+            <div class="day_participant_entry_delete" data-day-id="@Model.DayId" data-participant-id="@Model.Participants[i].Id"><img class="day_participant_entry_delete_img" src="~/Content/red-cross.png"/></div>
+        </div>
+
+    }
+</div>
+<script src="~/Scripts/day_script.js"></script>
+

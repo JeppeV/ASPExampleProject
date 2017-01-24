@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<h3> Indtast Ugenumber: </h3>
+    <div id="weeknumber_form">
+        <form action="/Home/Week/" method="post">
+            <input type="number" id="weeknumber_input" name="weeknumber" min="1" max="52" pattern=".{1,2}" required /> <br />
+            <input type="submit" value="Gå til Uge" id="submit_button" />
+        </form>
+
+    </div>
